@@ -1,0 +1,8 @@
+# Emberhold on Netlify. The game is packed in emberhold-game.tar.gz (so the repository is only three files):
+# the build unpacks it, copies the browser files into dist/, and Netlify bundles the online functions.
+[build]
+  command = "tar -xzf emberhold-game.tar.gz && node tools/build-site.mjs"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
